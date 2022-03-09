@@ -1,0 +1,20 @@
+.mat-sidenav {
+    width: 300px; 
+}
+
+.icon{
+    &--pointer{
+        cursor: pointer;
+    }
+}
+
+/* This container had a margin of 1rem at the beginning. */
+.container {
+    margin: 1rem;
+}
+
+@media(max-width: 432px) {
+    .container{
+        margin: 0rem;
+    }
+}
