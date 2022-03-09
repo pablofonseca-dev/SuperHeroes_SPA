@@ -1,4 +1,15 @@
+
 mat-card{
     margin-top: 2rem;
     cursor: pointer;
+}
+
+.mat-flat-button {
+     background-color: #4385f5;
+     color: #FAFAFA; 
+}
+
+.mat-stroked-button {
+    color: #4385f5;
+    border: 1px solid #4385f5;
 }
