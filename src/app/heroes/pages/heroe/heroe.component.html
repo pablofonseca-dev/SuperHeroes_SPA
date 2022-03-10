@@ -1,13 +1,4 @@
-<mat-grid-list
-  cols="1"
-  rowHeight="70vh"
-  *ngIf="!this.heroe; else heroeDataVisualization"
->
-  <mat-grid-tile>
-    <mat-spinner></mat-spinner>
-  </mat-grid-tile>
-</mat-grid-list>
-
+<app-spinner *ngIf="!this.heroe; else heroeDataVisualization"></app-spinner>
 <ng-template #heroeDataVisualization>
   <div flexLayout="row wrap" fxLayoutAlign="space-evenly center">
     <div fxFlex="10" class="back">

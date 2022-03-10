@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material.module';
 import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
 import { HeroePicturePipe } from './pipes/heroePicture/heroe-picture.pipe';
 import { HeroeComponent } from './pages/heroe/heroe.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
     CommonModule, 
     FlexLayoutModule,
     HeroesRoutingModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ]
 })
 export class HeroesModule { }
