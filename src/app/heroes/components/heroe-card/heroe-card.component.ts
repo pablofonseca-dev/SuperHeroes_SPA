@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IHeroe } from '../../interfaces/heroes.interfaces';
 
 @Component({
@@ -11,10 +11,19 @@ export class HeroeCardComponent implements OnInit {
   @Input()
   heroe!: IHeroe; 
 
-  constructor() { }
+  @Output() 
+  imageRendered: EventEmitter<boolean>;
+  
+  constructor() {
+    this.imageRendered = new EventEmitter(); 
+  }
 
   ngOnInit(): void {
     
+  }
+
+  onImageRendered = () => {
+    this.imageRendered.emit(true); 
   }
 
 }

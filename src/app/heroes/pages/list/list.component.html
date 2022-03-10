@@ -1,19 +1,20 @@
-<h1>Heroes List</h1>
-<mat-divider></mat-divider>
-<br />
-
-<div
-  fxLayout="row wrap"
-  fxLayout.xs="column wrap"
-  fxLayoutAlign="center"
-  fxLayoutGap="20"
-  fxLayoutGap.sm="30"
-  fxLayoutGap.xs="0"
-  fxFlexAlign="stretch"
->
-  <ng-template ngFor let-heroe [ngForOf]="this.heroes">
-    <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="40">
-      <app-heroe-card [heroe]="heroe"></app-heroe-card>
-    </div>
-  </ng-template>
+<div class="list-container">
+  <h1>Heroes List</h1>
+  <mat-divider></mat-divider>
+  <app-white-container-spinner [displayContainer]="!(this.allImagesRendered)"></app-white-container-spinner>
+  <div
+    fxLayout="row wrap"
+    fxLayout.xs="column wrap"
+    fxLayoutAlign="center"
+    fxLayoutGap="20"
+    fxLayoutGap.sm="30"
+    fxLayoutGap.xs="0"
+    fxFlexAlign="stretch"
+  >
+    <ng-template ngFor let-heroe [ngForOf]="this.heroes">
+      <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="40">
+        <app-heroe-card (imageRendered)="this.imageRenderHandler()" [heroe]="heroe"></app-heroe-card>
+      </div>
+    </ng-template>
+  </div>
 </div>

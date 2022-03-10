@@ -1,0 +1,16 @@
+.white-container{
+    position: absolute; 
+    z-index: 1000;
+    background-color: #FAFAFA; 
+    padding: 0; 
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: block;
+}
+
+.invisible{
+    display: none;
+}
