@@ -10,4 +10,5 @@ import { WhiteContainerSpinnerComponent } from './components/white-container-spi
     imports: [MaterialModule, CommonModule], 
     exports: [SpinnerComponent, WhiteContainerComponent, WhiteContainerSpinnerComponent]
 })
+
 export class SharedModule {}
