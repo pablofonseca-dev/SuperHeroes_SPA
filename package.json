@@ -9,7 +9,6 @@
     "test": "ng test",
     "deploy": "ng build --prod --base-href=/SuperHeroes_SPA/"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~13.1.0",
     "@angular/cdk": "^13.2.3",
