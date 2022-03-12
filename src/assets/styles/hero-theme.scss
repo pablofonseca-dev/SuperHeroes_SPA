@@ -2,7 +2,6 @@
 
 @include mat-core(); 
 
-// GAMA COLORES
 $hero-primary-color: (
   50: #e1f5fc,
   100: #b4e6f8,
@@ -81,13 +80,10 @@ $hero-accent-color: (
   )
 );
 
-
-// PALETA DE COLORES
 $hero-palette-primary: mat-palette($hero-primary-color);
 $hero-palette-warn: mat-palette($hero-warn-color);
 $hero-palette-accent: mat-palette($hero-accent-color);
 
-// TEMA PROPIO
 $hero-theme: mat-light-theme((
   color: (
     primary: $hero-palette-primary, 
@@ -96,5 +92,4 @@ $hero-theme: mat-light-theme((
   )
 ));
 
-// APLICAR NUESTRO TEMA A ANGULAR
 @include angular-material-theme($hero-theme);
