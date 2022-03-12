@@ -8,6 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 
 //Custom Modules
 import { AppRoutingModule } from './app-routing.module';
+import { MaterialModule } from './material/material.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpClientModule, 
+    HttpClientModule,
+    SharedModule,
     
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

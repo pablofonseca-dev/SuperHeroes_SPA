@@ -12,8 +12,7 @@
     mat-card-image
     [src]="heroe | heroePicture"
     alt="{{ heroe.superhero }}"
-    loading="lazy"
-    load="lazy"
+    (load)="this.onImageRendered()"
   />
   <mat-card-content>
     <h3>{{ heroe.publisher }}</h3>
