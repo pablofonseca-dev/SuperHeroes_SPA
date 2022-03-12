@@ -20,11 +20,25 @@
     <br />
     <p><strong>Characters:</strong> {{ heroe.characters }}</p>
   </mat-card-content>
-  <mat-card-actions fxLayout="row wrap" fxLayoutAlign="space-around center" fxLayoutGap="5">
-    <button mat-stroked-button [routerLink]="['/heroes/edit', heroe.id]">
+  <mat-card-actions
+    fxLayout="row wrap"
+    fxLayoutAlign="space-around center"
+    fxLayoutGap="5"
+  >
+    <button
+      mat-flat-button
+      color="accent"
+      [routerLink]="['/heroes/edit', heroe.id]"
+    >
       {{ "Edit Heroe" | uppercase }}
     </button>
-    <button mat-flat-button [routerLink]="['/heroes/', heroe.id]">{{ "View More" | uppercase }}</button>
+    <button
+      mat-flat-button
+      color="primary"
+      [routerLink]="['/heroes/', heroe.id]"
+    >
+      {{ "View More" | uppercase }}
+    </button>
   </mat-card-actions>
   <mat-card-footer></mat-card-footer>
 </mat-card>
