@@ -11,8 +11,8 @@ import { HeroesService } from '../../services/heroes.service';
 })
 export class HeroComponent implements OnInit {
   @Input() hero: IHero | undefined;
-  @Input() canGoBack: boolean | undefined; 
-  
+  @Input() canGoBack: boolean | undefined;
+
   heroId: string;
 
   constructor(
