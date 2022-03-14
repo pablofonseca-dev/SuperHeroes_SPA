@@ -49,11 +49,13 @@ export class HeroesService {
   /**
    * Query all the information of the heroes that match the
    * specified search term. If the search term matches in any of the
-   * properties of a superhero is going to be added to the results. 
-   * @param searchTerm The search term value. 
-   * @returns Observable with a collection of IHero objects. 
+   * properties of a superhero is going to be added to the results.
+   * @param searchTerm The search term value.
+   * @returns Observable with a collection of IHero objects.
    */
   queryHeroesByTerm = (searchTerm: string): Observable<IHero[]> => {
-    return this.http.get<IHero[]>(this.formatApiRoute(`heroes?q=${searchTerm}&_limit=5`));
-  }
+    return this.http.get<IHero[]>(
+      this.formatApiRoute(`heroes?q=${searchTerm}&_limit=5`)
+    );
+  };
 }
