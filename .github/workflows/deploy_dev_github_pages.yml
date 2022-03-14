@@ -42,6 +42,11 @@ jobs:
           # 👆 if cache hits skip this step.
         run: |
           npm ci
+      
+      - name: Build
+        run: |
+          npm run build -- --prod
+      
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3
