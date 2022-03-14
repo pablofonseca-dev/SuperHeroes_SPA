@@ -1,30 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { IHeroe } from '../../interfaces/heroes.interfaces';
+import { IHero } from '../../interfaces/heroes.interfaces';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
-  selector: 'app-heroe',
-  templateUrl: './heroe.component.html',
-  styleUrls: ['./heroe.component.scss'],
+  selector: 'app-hero',
+  templateUrl: './hero.component.html',
+  styleUrls: ['./hero.component.scss'],
 })
-export class HeroeComponent implements OnInit {
-  heroe: IHeroe | undefined;
-
-  heroeId: string;
+export class HeroComponent implements OnInit {
+  @Input() hero: IHero | undefined;
+  @Input() canGoBack: boolean | undefined; 
+  
+  heroId: string;
 
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _heroesService: HeroesService
   ) {
-    this.heroeId = '';
+    this.heroId = '';
   }
 
   ngOnInit(): void {
-    this.loadHeroeId();
-    this.queryHeroeDataFromService();
+    if (!this.hero) {
+      this.loadHeroeId();
+      this.queryHeroeDataFromService();
+      this.canGoBack = true;
+    }
   }
 
   /**
@@ -43,16 +47,16 @@ export class HeroeComponent implements OnInit {
           return id;
         })
       )
-      .subscribe(id => (this.heroeId = id));
+      .subscribe(id => (this.heroId = id));
   };
 
   /**
    * Query all the information of a heroe using the heroe id.
    */
   queryHeroeDataFromService = () => {
-    this._heroesService.queryHeroeById(this.heroeId).subscribe({
-      next: heroe => {
-        this.heroe = heroe;
+    this._heroesService.queryHeroeById(this.heroId).subscribe({
+      next: hero => {
+        this.hero = hero;
       },
     });
   };

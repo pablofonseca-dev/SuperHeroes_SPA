@@ -2,22 +2,22 @@
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>
-      <h2>{{ heroe.superhero }}</h2>
+      <h2>{{ this.hero?.superhero }}</h2>
     </mat-card-title>
     <mat-card-subtitle>
-      <h3>{{ heroe.alter_ego }}</h3>
+      <h3>{{ this.hero?.alter_ego }}</h3>
     </mat-card-subtitle>
   </mat-card-header>
   <img
     mat-card-image
-    [src]="heroe | heroePicture"
-    alt="{{ heroe.superhero }}"
+    [src]="this.hero | heroPicture"
+    alt="{{ hero?.superhero }}"
     (load)="this.onImageRendered()" />
   <mat-card-content>
-    <h3>{{ heroe.publisher }}</h3>
-    <p><strong>First Appearance:</strong> {{ heroe.first_appearance }}</p>
+    <h3>{{ hero?.publisher }}</h3>
+    <p><strong>First Appearance:</strong> {{ hero?.first_appearance }}</p>
     <br />
-    <p><strong>Characters:</strong> {{ heroe.characters }}</p>
+    <p><strong>Characters:</strong> {{ hero?.characters }}</p>
   </mat-card-content>
   <mat-card-actions
     fxLayout="row wrap"
@@ -26,13 +26,13 @@
     <button
       mat-flat-button
       color="accent"
-      [routerLink]="['/heroes/edit', heroe.id]">
+      [routerLink]="['/heroes/edit', hero?.id]">
       {{ 'Edit Heroe' | uppercase }}
     </button>
     <button
       mat-flat-button
       color="primary"
-      [routerLink]="['/heroes/', heroe.id]">
+      [routerLink]="['/heroes/', hero?.id]">
       {{ 'View More' | uppercase }}
     </button>
   </mat-card-actions>

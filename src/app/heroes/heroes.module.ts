@@ -7,21 +7,21 @@ import { SearchComponent } from './pages/search/search.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from '../material/material.module';
-import { HeroeCardComponent } from './components/heroe-card/heroe-card.component';
-import { HeroePicturePipe } from './pipes/heroePicture/heroe-picture.pipe';
-import { HeroeComponent } from './pages/heroe/heroe.component';
+import { HeroeCardComponent } from './components/hero-card/hero-card.component';
+import { HeroPicturePipe } from './pipes/heroPicture/hero-picture.pipe';
+import { HeroComponent } from './pages/hero/hero.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    HeroeComponent,
+    HeroComponent,
     HomeComponent,
     ListComponent,
     AddComponent,
     SearchComponent,
     HeroeCardComponent,
-    HeroePicturePipe,
+    HeroPicturePipe,
   ],
   imports: [
     CommonModule,

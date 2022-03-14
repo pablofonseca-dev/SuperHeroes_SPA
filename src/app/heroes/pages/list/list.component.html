@@ -11,11 +11,11 @@
     fxLayoutGap.sm="30"
     fxLayoutGap.xs="0"
     fxFlexAlign="stretch">
-    <ng-template ngFor let-heroe [ngForOf]="this.heroes">
+    <ng-template ngFor let-hero [ngForOf]="this.heroes">
       <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="40">
-        <app-heroe-card
+        <app-hero-card
           (imageRendered)="this.imageRenderHandler()"
-          [heroe]="heroe"></app-heroe-card>
+          [hero]="hero"></app-hero-card>
       </div>
     </ng-template>
   </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IHeroe } from '../../interfaces/heroes.interfaces';
+import { IHero } from '../../interfaces/heroes.interfaces';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { HeroesService } from '../../services/heroes.service';
   styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-  heroes: IHeroe[];
+  heroes: IHero[];
 
   currentRenderedImages: boolean[] = [];
 

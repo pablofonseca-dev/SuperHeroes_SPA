@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IHeroe } from '../../interfaces/heroes.interfaces';
+import { IHero } from '../../interfaces/heroes.interfaces';
 
 @Pipe({
-  name: 'heroePicture',
+  name: 'heroPicture',
 })
-export class HeroePicturePipe implements PipeTransform {
-  transform(heroe: IHeroe): string {
+export class HeroPicturePipe implements PipeTransform {
+  transform(hero: IHero = {}): string {
     const assetsPath: string = 'assets';
     const heroesAssets: string = '/heroes';
     const heroesAssetsPath: string = assetsPath.concat(heroesAssets);
@@ -13,10 +13,10 @@ export class HeroePicturePipe implements PipeTransform {
 
     let relativeSourcePath: string = '';
 
-    if (heroe.alt_img) {
-      relativeSourcePath = heroe.alt_img;
-    } else if (heroe.id) {
-      relativeSourcePath = `${heroesAssetsPath}/${heroe.id}.${pictureFormat}`;
+    if (hero.alt_img) {
+      relativeSourcePath = hero.alt_img;
+    } else if (hero.id) {
+      relativeSourcePath = `${heroesAssetsPath}/${hero.id}.${pictureFormat}`;
     } else {
       relativeSourcePath = `${assetsPath}/no-image.png`;
     }
