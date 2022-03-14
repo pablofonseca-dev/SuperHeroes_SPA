@@ -4,7 +4,7 @@ export interface IRouterLink {
   icon?: string;
 }
 
-export interface IHeroe {
+export interface IHero {
   id?: string;
   superhero?: string;
   publisher?: string;

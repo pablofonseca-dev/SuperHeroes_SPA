@@ -1,10 +1,10 @@
-<app-spinner *ngIf="!this.heroe; else heroeDataVisualization"></app-spinner>
-<ng-template #heroeDataVisualization>
+<app-spinner *ngIf="!this.hero; else heroDataVisualization"></app-spinner>
+<ng-template #heroDataVisualization>
   <div flexLayout="row wrap" fxLayoutAlign="space-evenly center">
-    <div fxFlex="10" class="back">
+    <div fxFlex="10" class="back" *ngIf="this.canGoBack">
       <button
         mat-fab
-        aria-label="Example icon button with a home icon"
+        aria-label="Go Back"
         (click)="this.navigateBack()">
         <mat-icon>west</mat-icon>
       </button>
@@ -19,13 +19,13 @@
         <mat-card class="container__card">
           <mat-card-header>
             <mat-card-title>
-              {{ this.heroe?.superhero }} - {{ this.heroe?.alter_ego }}
+              {{ this.hero?.superhero }} - {{ this.hero?.alter_ego }}
             </mat-card-title>
           </mat-card-header>
           <img
             mat-card-image
             class="container__image"
-            [src]="this.heroe! | heroePicture"
+            [src]="this.hero! | heroPicture"
             alt="" />
         </mat-card>
       </div>
@@ -41,28 +41,28 @@
               <mat-list>
                 <div mat-subheader>Characters</div>
                 <mat-list-item>
-                  {{ this.heroe?.characters }}
+                  {{ this.hero?.characters }}
                 </mat-list-item>
               </mat-list>
               <mat-divider></mat-divider>
               <mat-list>
                 <div mat-subheader>Publisher Name</div>
                 <mat-list-item>
-                  {{ this.heroe?.publisher }}
+                  {{ this.hero?.publisher }}
                 </mat-list-item>
               </mat-list>
               <mat-divider></mat-divider>
               <mat-list>
                 <div mat-subheader>First Appearance</div>
                 <mat-list-item>
-                  {{ this.heroe?.first_appearance }}
+                  {{ this.hero?.first_appearance }}
                 </mat-list-item>
               </mat-list>
               <mat-divider></mat-divider>
               <mat-list>
                 <div mat-subheader>Alter Ego</div>
                 <mat-list-item>
-                  {{ this.heroe?.alter_ego }}
+                  {{ this.hero?.alter_ego }}
                 </mat-list-item>
               </mat-list>
               <mat-divider></mat-divider>
@@ -71,7 +71,7 @@
                 <mat-list-item>
                   <mat-chip-list>
                     <mat-chip>
-                      {{ this.heroe?.id }}
+                      {{ this.hero?.id }}
                     </mat-chip>
                   </mat-chip-list>
                 </mat-list-item>
