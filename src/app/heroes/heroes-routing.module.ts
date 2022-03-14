@@ -6,38 +6,37 @@ import { SearchComponent } from './pages/search/search.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { HomeComponent } from './pages/home/home.component';
 
-
 const routes: Routes = [
   {
-    path: '', 
+    path: '',
     component: HomeComponent,
     children: [
       {
-        path: 'list', 
-        component: ListComponent
-      }, 
+        path: 'list',
+        component: ListComponent,
+      },
       {
         path: 'add',
-        component: AddComponent
-      }, 
+        component: AddComponent,
+      },
       {
-        path: 'edit/:id', 
-        component: AddComponent, 
-      }, 
+        path: 'edit/:id',
+        component: AddComponent,
+      },
       {
-        path: 'search', 
-        component: SearchComponent
-      }, 
+        path: 'search',
+        component: SearchComponent,
+      },
       {
-        path: ':id', 
-        component: HeroeComponent
-      }
-    ]
-  }
+        path: ':id',
+        component: HeroeComponent,
+      },
+    ],
+  },
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)], 
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class HeroesRoutingModule { }
+export class HeroesRoutingModule {}

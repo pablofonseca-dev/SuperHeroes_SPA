@@ -1,5 +1,5 @@
 export const environment = {
-  production: true, 
-  title: 'Prod Environment', 
-  apiEndpoint: ''
+  production: true,
+  title: 'Prod Environment',
+  apiEndpoint: '',
 };

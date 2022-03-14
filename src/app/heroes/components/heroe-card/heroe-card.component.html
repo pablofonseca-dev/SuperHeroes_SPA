@@ -12,8 +12,7 @@
     mat-card-image
     [src]="heroe | heroePicture"
     alt="{{ heroe.superhero }}"
-    (load)="this.onImageRendered()"
-  />
+    (load)="this.onImageRendered()" />
   <mat-card-content>
     <h3>{{ heroe.publisher }}</h3>
     <p><strong>First Appearance:</strong> {{ heroe.first_appearance }}</p>
@@ -23,21 +22,18 @@
   <mat-card-actions
     fxLayout="row wrap"
     fxLayoutAlign="space-around center"
-    fxLayoutGap="5"
-  >
+    fxLayoutGap="5">
     <button
       mat-flat-button
       color="accent"
-      [routerLink]="['/heroes/edit', heroe.id]"
-    >
-      {{ "Edit Heroe" | uppercase }}
+      [routerLink]="['/heroes/edit', heroe.id]">
+      {{ 'Edit Heroe' | uppercase }}
     </button>
     <button
       mat-flat-button
       color="primary"
-      [routerLink]="['/heroes/', heroe.id]"
-    >
-      {{ "View More" | uppercase }}
+      [routerLink]="['/heroes/', heroe.id]">
+      {{ 'View More' | uppercase }}
     </button>
   </mat-card-actions>
   <mat-card-footer></mat-card-footer>

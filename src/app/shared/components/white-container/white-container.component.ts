@@ -1,20 +1,24 @@
-import { Component, HostListener, Input, OnChanges, OnDestroy, OnInit, EventEmitter } from '@angular/core';
+import {
+  Component,
+  HostListener,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  EventEmitter,
+} from '@angular/core';
 
 @Component({
   selector: 'app-white-container',
   templateUrl: './white-container.component.html',
-  styleUrls: ['./white-container.component.scss']
+  styleUrls: ['./white-container.component.scss'],
 })
-export class WhiteContainerComponent implements OnInit {
+export class WhiteContainerComponent {
+  @Input() displayContainer: boolean;
 
-  @Input() displayContainer: boolean; 
-
-  constructor() { 
-    this.displayContainer = true; 
+  constructor() {
+    this.displayContainer = true;
   }
 
-  destroyEvent: EventEmitter<boolean> = new EventEmitter(); 
-
-  ngOnInit(): void {
-  }
+  destroyEvent: EventEmitter<boolean> = new EventEmitter();
 }

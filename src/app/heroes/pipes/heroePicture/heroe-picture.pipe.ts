@@ -21,6 +21,6 @@ export class HeroePicturePipe implements PipeTransform {
       relativeSourcePath = `${assetsPath}/no-image.png`;
     }
 
-    return "".concat(relativeSourcePath.slice(0));
+    return ''.concat(relativeSourcePath.slice(0));
   }
 }

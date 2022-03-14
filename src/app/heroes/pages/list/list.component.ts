@@ -5,10 +5,9 @@ import { HeroesService } from '../../services/heroes.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit {
-
   heroes: IHeroe[];
 
   currentRenderedImages: boolean[] = [];
@@ -20,19 +19,16 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
     this._heroesService.queryAllHeroes().subscribe({
-      next: ((heroes) => this.heroes = heroes)
+      next: heroes => (this.heroes = heroes),
     });
-
   }
 
   imageRenderHandler = () => {
     this.currentRenderedImages = [...this.currentRenderedImages, true];
 
-    if(!(this.currentRenderedImages.length === this.heroes.length)){
-      this.allImagesRendered = true; 
+    if (!(this.currentRenderedImages.length === this.heroes.length)) {
+      this.allImagesRendered = true;
     }
-  }
-
+  };
 }
