@@ -2,7 +2,10 @@
 <ng-template #heroDataVisualization>
   <div flexLayout="row wrap" fxLayoutAlign="space-evenly center">
     <div fxFlex="10" class="back" *ngIf="this.canGoBack">
-      <button mat-fab aria-label="Go Back" (click)="this.navigateBack()">
+      <button
+        mat-fab
+        aria-label="Go Back"
+        (click)="this.navigateBack()">
         <mat-icon>west</mat-icon>
       </button>
     </div>
