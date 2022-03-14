@@ -4,31 +4,30 @@ import { IRouterLink } from '../../interfaces/heroes.interfaces';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'], 
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-
   links: IRouterLink[] = [];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     this.links = [
       {
-        description: "Heroes List", 
-        path: './list', 
-        icon: 'label'
-      }, 
+        description: 'Heroes List',
+        path: './list',
+        icon: 'label',
+      },
       {
-        description: 'Add Heroe', 
+        description: 'Add Heroe',
         path: './add',
-        icon: 'add'
-      }, 
+        icon: 'add',
+      },
       {
-        description: 'Search Heroe', 
+        description: 'Search Heroe',
         path: './search',
-        icon: 'search'
-      }, 
-    ]
+        icon: 'search',
+      },
+    ];
   }
 }

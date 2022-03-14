@@ -7,7 +7,7 @@ import { HeroesService } from '../../services/heroes.service';
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
-  styleUrls: ['./heroe.component.scss']
+  styleUrls: ['./heroe.component.scss'],
 })
 export class HeroeComponent implements OnInit {
   heroe: IHeroe | undefined;
@@ -16,21 +16,19 @@ export class HeroeComponent implements OnInit {
 
   constructor(
     private _router: Router,
-    private _activatedRoute: ActivatedRoute, 
+    private _activatedRoute: ActivatedRoute,
     private _heroesService: HeroesService
   ) {
-
-    this.heroeId = "";
-
+    this.heroeId = '';
   }
 
   ngOnInit(): void {
-    this.loadHeroeId(); 
-    this.queryHeroeDataFromService(); 
+    this.loadHeroeId();
+    this.queryHeroeDataFromService();
   }
 
   /**
-   * Load the heroe Id passed from the Activated Route. 
+   * Load the heroe Id passed from the Activated Route.
    */
   loadHeroeId = () => {
     /**
@@ -40,30 +38,29 @@ export class HeroeComponent implements OnInit {
      */
     this._activatedRoute.params
       .pipe(
-        map((params) => {
+        map(params => {
           const { id } = params;
           return id;
         })
       )
-      .subscribe((id) => this.heroeId = id);
+      .subscribe(id => (this.heroeId = id));
   };
 
   /**
-   * Query all the information of a heroe using the heroe id. 
+   * Query all the information of a heroe using the heroe id.
    */
   queryHeroeDataFromService = () => {
     this._heroesService.queryHeroeById(this.heroeId).subscribe({
-      next: ((heroe) => {
-        this.heroe = heroe; 
-      })
-    })
-  }
+      next: heroe => {
+        this.heroe = heroe;
+      },
+    });
+  };
 
   /**
-   * Use the Angular Router instance to navigate to the previous page. 
+   * Use the Angular Router instance to navigate to the previous page.
    */
   navigateBack = () => {
     this._router.navigate(['/heroes/list']);
-  }
-  
+  };
 }

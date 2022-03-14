@@ -3,19 +3,12 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-white-container-spinner',
   templateUrl: './white-container-spinner.component.html',
-  styles: [
-  ]
+  styles: [],
 })
-export class WhiteContainerSpinnerComponent implements OnInit {
+export class WhiteContainerSpinnerComponent {
+  @Input() displayContainer: boolean;
 
-  @Input() displayContainer: boolean; 
-  
-  constructor() { 
-    this.displayContainer = false; 
+  constructor() {
+    this.displayContainer = false;
   }
-
-  ngOnInit(): void {
-
-  }
-
 }

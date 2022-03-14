@@ -5,20 +5,20 @@
   }
 }
 
-.back{
-    text-align: center;
+.back {
+  text-align: center;
 }
 
 .container {
-    &__card {
-      height: 70vh;
-      width: 40vh;
-      margin: 0 auto;
-    }
-
-    &__image{
-        height: 100%;
-        border-end-end-radius: 5px;
-        border-end-start-radius: 5px;
-    }
+  &__card {
+    height: 70vh;
+    width: 40vh;
+    margin: 0 auto;
   }
+
+  &__image {
+    height: 100%;
+    border-end-end-radius: 5px;
+    border-end-start-radius: 5px;
+  }
+}

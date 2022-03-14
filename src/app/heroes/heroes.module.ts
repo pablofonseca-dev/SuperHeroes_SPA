@@ -13,7 +13,6 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     HeroeComponent,
@@ -22,10 +21,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddComponent,
     SearchComponent,
     HeroeCardComponent,
-    HeroePicturePipe
+    HeroePicturePipe,
   ],
   imports: [
-    CommonModule, 
+    CommonModule,
     FormsModule,
     FlexLayoutModule,
     HeroesRoutingModule,
@@ -33,8 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MaterialModule,
     MaterialModule,
-    SharedModule, 
-    ReactiveFormsModule
-  ]
+    SharedModule,
+    ReactiveFormsModule,
+  ],
 })
-export class HeroesModule { }
+export class HeroesModule {}

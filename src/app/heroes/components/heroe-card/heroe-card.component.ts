@@ -4,26 +4,20 @@ import { IHeroe } from '../../interfaces/heroes.interfaces';
 @Component({
   selector: 'app-heroe-card',
   templateUrl: './heroe-card.component.html',
-  styleUrls: ['./heroe-card.component.scss']
+  styleUrls: ['./heroe-card.component.scss'],
 })
-export class HeroeCardComponent implements OnInit {
-  
+export class HeroeCardComponent {
   @Input()
-  heroe!: IHeroe; 
+  heroe!: IHeroe;
 
-  @Output() 
+  @Output()
   imageRendered: EventEmitter<boolean>;
-  
-  constructor() {
-    this.imageRendered = new EventEmitter(); 
-  }
 
-  ngOnInit(): void {
-    
+  constructor() {
+    this.imageRendered = new EventEmitter();
   }
 
   onImageRendered = () => {
-    this.imageRendered.emit(true); 
-  }
-
+    this.imageRendered.emit(true);
+  };
 }
