@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x, 12.x]
-
+      fail-fast: false
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -43,7 +43,6 @@ jobs:
           # 👆 if cache hits skip this step.
         run: |
           npm ci
-          fail-fast: false 
 
       - name: Build
         run: |
