@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
   title: 'Prod Environment',
-  apiEndpoint: '',
+  apiEndpoint:
+    'https://my-json-server.typicode.com/pablofonseca-dev/SuperHeroes_JSON_Server',
 };
