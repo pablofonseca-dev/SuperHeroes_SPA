@@ -1,0 +1,94 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$hero-primary-color: (
+  50: #e1f5fc,
+  100: #b4e6f8,
+  200: #84d5f3,
+  300: #56c5ee,
+  400: #35b8ec,
+  500: #18acea,
+  600: #119edb,
+  700: #078bc8,
+  800: #077ab4,
+  900: #005a93,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(black, 0.87),
+    700: rgba(black, 0.87),
+    800: white,
+    900: white,
+  ),
+);
+
+$hero-warn-color: (
+  50: #fae7e6,
+  100: #fec7b9,
+  200: #fca38d,
+  300: #fb7e60,
+  400: #fa603e,
+  500: #f9411d,
+  600: #ee3b19,
+  700: #e13414,
+  800: #d32c10,
+  900: #b91e06,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgba(black, 0.87),
+    600: rgba(black, 0.87),
+    700: rgba(black, 0.87),
+    800: white,
+    900: white,
+  ),
+);
+
+$hero-accent-color: (
+  50: #ede7fb,
+  100: #d0c5f4,
+  200: #b09fee,
+  300: #8e77e9,
+  400: #7159e4,
+  500: #513cde,
+  600: #4438d8,
+  700: #2e30cf,
+  800: #072ac8,
+  900: #001ebe,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+  ),
+);
+
+$hero-palette-primary: mat-palette($hero-primary-color);
+$hero-palette-warn: mat-palette($hero-warn-color);
+$hero-palette-accent: mat-palette($hero-accent-color);
+
+$hero-theme: mat-light-theme(
+  (
+    color: (
+      primary: $hero-palette-primary,
+      accent: $hero-palette-accent,
+      warn: $hero-palette-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($hero-theme);
