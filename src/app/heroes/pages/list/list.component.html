@@ -9,13 +9,14 @@
     fxLayoutAlign="center"
     fxLayoutGap="20"
     fxLayoutGap.sm="30"
-    fxLayoutGap.xs="0"
-    fxFlexAlign="stretch">
+    fxLayoutGap.xs="10"
+    fxFlexAlign="stretch"
+    fxFlexAlign.xs="center">
     <ng-template ngFor let-hero [ngForOf]="this.heroes">
-      <div fxFlex="20" fxFlex.xs="100" fxFlex.sm="40">
+      <div fxFlex="20" fxFlex.lt-lg="45" fxFlex.md="30" fxFlex.xs="60">
         <app-hero-card
-          (imageRendered)="this.imageRenderHandler()"
-          [hero]="hero"></app-hero-card>
+          [hero]="hero"
+          (imageRendered)="this.imageRenderHandler()"></app-hero-card>
       </div>
     </ng-template>
   </div>
