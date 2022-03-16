@@ -1,12 +1,4 @@
-import { NgIf, NgIfContext } from '@angular/common';
-import {
-  Component,
-  ElementRef,
-  Input,
-  OnInit,
-  TemplateRef,
-  ViewChild,
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-spinner',

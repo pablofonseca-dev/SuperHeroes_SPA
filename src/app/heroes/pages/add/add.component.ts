@@ -1,9 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
-import { MatSelectChange } from '@angular/material/select';
 import { ActivatedRoute } from '@angular/router';
-import { map, switchMap } from 'rxjs/operators';
-import { IHero, Publisher } from '../../interfaces/heroes.interfaces';
+import { switchMap } from 'rxjs/operators';
+import { IHero } from '../../interfaces/heroes.interfaces';
 import { HeroPicturePipe } from '../../pipes/heroPicture/hero-picture.pipe';
 import { HeroesService } from '../../services/heroes.service';
 

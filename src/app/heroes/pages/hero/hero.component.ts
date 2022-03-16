@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { map } from 'rxjs';
 import { IHero } from '../../interfaces/heroes.interfaces';
 import { HeroesService } from '../../services/heroes.service';
