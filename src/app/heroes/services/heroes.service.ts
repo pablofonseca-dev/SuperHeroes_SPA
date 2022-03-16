@@ -58,4 +58,14 @@ export class HeroesService {
       this.formatApiRoute(`heroes?q=${searchTerm}&_limit=5`)
     );
   };
+
+  /**
+   * Fire a Post Request to create a new Superhero.
+   * @param newHero All the information of the new Superhero.
+   * @returns Observable with a IHero object containing the information of the
+   * hero that was created.
+   */
+  createSuperhero = (newHero: IHero): Observable<IHero> => {
+    return this.http.post<IHero>(this.formatApiRoute(`heroes`), newHero);
+  };
 }

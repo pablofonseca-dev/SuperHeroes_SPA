@@ -23,6 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeroeCardComponent,
     HeroPicturePipe,
   ],
+  providers: [HeroPicturePipe],
   imports: [
     CommonModule,
     FormsModule,
