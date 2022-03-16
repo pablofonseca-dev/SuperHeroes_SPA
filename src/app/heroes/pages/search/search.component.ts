@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { filter, map } from 'rxjs/operators';
 import { IHero } from '../../interfaces/heroes.interfaces';
 import { HeroesService } from '../../services/heroes.service';
 
