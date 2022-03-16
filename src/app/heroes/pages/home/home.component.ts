@@ -19,12 +19,12 @@ export class HomeComponent implements OnInit {
         icon: 'label',
       },
       {
-        description: 'Add Heroe',
+        description: 'Add Hero',
         path: './add',
         icon: 'add',
       },
       {
-        description: 'Search Heroe',
+        description: 'Search Hero',
         path: './search',
         icon: 'search',
       },
