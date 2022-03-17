@@ -68,4 +68,17 @@ export class HeroesService {
   createSuperhero = (newHero: IHero): Observable<IHero> => {
     return this.http.post<IHero>(this.formatApiRoute(`heroes`), newHero);
   };
+
+  /**
+   * Fire a Post Request to update a Superhero.
+   * @param newHeroData All the information related to the Superhero that is going to be updated.
+   * @returns Observable with a IHero object containing the information of the
+   * hero that was updated.
+   */
+  updateSuperhero = (newHeroData: IHero): Observable<IHero> => {
+    return this.http.put<IHero>(
+      this.formatApiRoute(`heroes`, newHeroData.id),
+      newHeroData
+    );
+  };
 }
