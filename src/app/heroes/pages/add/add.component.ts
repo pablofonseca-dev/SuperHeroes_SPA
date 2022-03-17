@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { IHero } from '../../interfaces/heroes.interfaces';
 import { HeroPicturePipe } from '../../pipes/heroPicture/hero-picture.pipe';
@@ -23,7 +23,8 @@ export class AddComponent implements OnInit {
   constructor(
     private _heroPipe: HeroPicturePipe,
     private _heroesService: HeroesService,
-    private _activatedRoute: ActivatedRoute
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
   ) {
     this.publishers = [];
 
@@ -53,9 +54,20 @@ export class AddComponent implements OnInit {
    */
   @ViewChild('imageSource') imageSrc!: ElementRef<HTMLInputElement>;
   loadImage = () => {
-    const imageSource = this.imageSrc.nativeElement.value;
+    let imageSource = this.imageSrc.nativeElement.value;
+
+    if (!imageSource) {
+      imageSource = this.hero.alt_img!;
+    }
     this.hero.alt_img = imageSource;
     this.displayImageURL = this._heroPipe.transform(this.hero);
+  };
+
+  /**
+   * Responsible of adding or updating a superhero depending of the scenario.
+   */
+  processSuperHero = () => {
+    this.hero.id ? this.updateSuperHero() : this.addSuperHero();
   };
 
   /**
@@ -66,6 +78,19 @@ export class AddComponent implements OnInit {
     this._heroesService.createSuperhero(this.hero).subscribe({
       next: (heroAdded: IHero) => {
         this.hero = heroAdded;
+        this._router.navigate(['/heroes/edit/', this.hero.id]);
+      },
+    });
+  };
+
+  /**
+   * Updates a superhero using the superheroes service passing as parameter the
+   * hero defined as a global variable.
+   */
+  updateSuperHero = () => {
+    this._heroesService.updateSuperhero(this.hero).subscribe({
+      next: (heroUpdated: IHero) => {
+        this.hero = heroUpdated;
       },
     });
   };
