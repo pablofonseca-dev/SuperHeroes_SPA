@@ -2,6 +2,8 @@
 
 A Product made By <strong>pablofonseca-dev</strong>
 
+Made with Love ❤️
+
 ## Dear Developers
 
 This application has the objective of being a boilerplate for creating CRUD applications using the Angular Framework.
@@ -12,7 +14,34 @@ With this project you could have an idea of the architecture, processes and oper
 
 I decided to not modify the Angular CLI generated documentation, the plan from now and in the future is to use the same documentation to setup the environment.
 
+If you want to collaborate that is going to be very welcome! 💻
+
 Thank you so much, and happy coding!
+
+## How can I see the SPA deployed? Is it necessary to setup my local environment?
+
+As you can see this repository have many pipelines and GitHub Actions, part of the deployment steps (at least in Dev) is to deploy the App to Github Pages, so you can access the application without doing the setup! Just click in the link that is below. 
+
+[Superheroes CRUD SPA](https://pablofonseca-dev.github.io/SuperHeroes_SPA/heroes/list) 🚀
+
+# Local Setup
+
+## JSON Server Setup
+
+To run the JSON Server locally follow these steps: 
+
+1. Install JSON Server as a global dependency if you don't have it installed: [JSON Server Repository](https://github.com/typicode/json-server#getting-started)
+2. Go to the project directory **SuperHeroes_SPA** with the command line or command prompt. 
+3. Type the following command <code>json-server --watch ./db.json --port=3004</code>
+
+Now you should see the following log message from JSON Server. 
+
+![json-server-log](https://user-images.githubusercontent.com/22894594/159025539-c0bf6689-3fc9-4c73-ac60-33dc3e2b087a.png)
+
+
+<strong>Important Note</strong>
+
+If you want to modify the port JSON Server is listening you could use the same flag <code>--port=<port_number></code>. Also is important to make the update in the <code>src/environments/environment.ts</code> typescript file and change the port number in there. 
 
 ## Credentials and Authentication
 
