@@ -18,7 +18,9 @@
     fxFlex.md="100"
     fxFlex.xs="100"
     fxLayout="column wrap">
-    <h1>New Hero: {{ this.hero?.superhero }}</h1>
+    <h1>
+      {{ !this.hero.id ? 'New' : 'Edit' }} Hero: {{ this.hero?.superhero }}
+    </h1>
     <div
       fxLayout="row"
       fxLayout.md="column wrap"
@@ -84,11 +86,11 @@
         type="text"
         [(ngModel)]="this.hero.alt_img"
         #imageSource
-        (input)="this.loadImage()"
         required />
     </mat-form-field>
     <br />
-    <div fxLayout="row" fxLayoutGap="20">
+
+    <div fxLayout="row" fxLayoutGap="20" *ngIf="!this.hero.id; else editHero">
       <button
         mat-raised-button
         color="primary"
@@ -100,19 +102,41 @@
       <button
         mat-raised-button
         color="accent"
-        (click)="this.deleteSuperHero()"
+        (click)="this.resetFormFields()"
         fxFlex="50">
-        <mat-icon>delete_forever</mat-icon>
-        Delete
+        <mat-icon>remove</mat-icon>
+        Reset Form
       </button>
     </div>
+
+    <ng-template #editHero>
+      <div fxLayout="row" fxLayoutGap="20">
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="this.processSuperHero()"
+          fxFlex="50">
+          <mat-icon>edit</mat-icon>
+          Save Edit
+        </button>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="this.deleteSuperHero()"
+          fxFlex="50">
+          <mat-icon>delete_forever</mat-icon>
+          Delete
+        </button>
+      </div>
+    </ng-template>
   </div>
+
   <div
     fxFlex="40"
     fxFlex.sm="100"
     fxFlex.md="100"
     fxFlex.xs="100"
     class="hero-avatar">
-    <img [src]="this.displayImageURL" fxFlex="60" />
+    <img [src]="this.hero | heroPicture" fxFlex="60" />
   </div>
 </div>

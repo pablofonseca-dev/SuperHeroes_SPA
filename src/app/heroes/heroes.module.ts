@@ -12,6 +12,7 @@ import { HeroPicturePipe } from './pipes/heroPicture/hero-picture.pipe';
 import { HeroComponent } from './pages/hero/hero.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SearchComponent,
     HeroeCardComponent,
     HeroPicturePipe,
+    ConfirmationDialogComponent,
   ],
-  providers: [HeroPicturePipe],
   imports: [
     CommonModule,
     FormsModule,

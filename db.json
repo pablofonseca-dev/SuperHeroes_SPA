@@ -1,0 +1,113 @@
+{
+  "users": [],
+  "heroes": [
+    {
+      "superhero": "Dr Strange",
+      "characters": "Doctor Stephen Strange",
+      "alter_ego": "Stephen Vincent Strange",
+      "first_appearance": " Strange Tales #110",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://excelsior.universomarvel.com/era_marvel/imagenes/st1110b.jpg",
+      "id": 1
+    },
+    {
+      "superhero": "Superman",
+      "characters": "Kal-El (Birth Name) - Clark Joseph Kent (Adoped Name)",
+      "alter_ego": "Kal-El (Birth Name) - Clark Joseph Kent (Adoped Name)",
+      "first_appearance": "Action Comics, no. 1 (June 1938)",
+      "publisher": "DC Comics",
+      "alt_img": "https://image.isu.pub/150416160813-133e5e55c005be57cd69a8504a2ebd96/jpg/page_1.jpg",
+      "id": 2
+    },
+    {
+      "superhero": "Spiderman",
+      "characters": "Peter Parker",
+      "alter_ego": "Peter Parker",
+      "first_appearance": "Amazing Fantasy #15",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://i.annihil.us/u/prod/marvel/i/mg/7/00/5d924ca64c787/clean.jpg",
+      "id": 3
+    },
+    {
+      "superhero": "Thor",
+      "characters": "Donald Blake",
+      "alter_ego": "Donald Blake",
+      "first_appearance": "Journey into Mystery #83",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://i.annihil.us/u/prod/marvel/i/mg/2/80/5a83133fa0008/clean.jpg",
+      "id": 4
+    },
+    {
+      "superhero": "Ironman",
+      "characters": "Tony Stark",
+      "alter_ego": "Tony Stark",
+      "first_appearance": "Tales of Suspense #39 (March 1963)",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://i.annihil.us/u/prod/marvel/i/mg/9/b0/536d69b8ae3b4/clean.jpg",
+      "id": 5
+    },
+    {
+      "superhero": "Wonder Woman",
+      "characters": "Diana Prince",
+      "alter_ego": "Diana Prince",
+      "first_appearance": "Introducing Wonder Woman, a story from All Star Comics #8",
+      "publisher": "DC Comics",
+      "alt_img": "https://4.bp.blogspot.com/-FvaESxoXo7g/WTLJX_SUuNI/AAAAAAAAFCc/D_Inbm__WcQrDM5XRGSrZHwUy_4TD9FpQCEw/s1600/ww%2B1.jpeg",
+      "id": 6
+    },
+    {
+      "superhero": "Batman",
+      "characters": "Bruce Wayne",
+      "alter_ego": "Bruce Wayne",
+      "first_appearance": "Detective Comics #27",
+      "publisher": "DC Comics",
+      "alt_img": "https://cdnb.20m.es/sites/144/2021/05/batman-detective-comics.jpg",
+      "id": 7
+    },
+    {
+      "superhero": "Flash",
+      "characters": "Barry Allen",
+      "alter_ego": "Barry Allen",
+      "first_appearance": " Showcase #4",
+      "publisher": "DC Comics",
+      "alt_img": "https://1.bp.blogspot.com/-CW1A4IQIw-0/T5WoLr6bjvI/AAAAAAAAQbM/6vnhW2eAHYQ/s1600/Showcase_004_01.jpg",
+      "id": 8
+    },
+    {
+      "superhero": "The Incredible Hulk",
+      "characters": "Bruce Banner",
+      "alter_ego": "Bruce Banner",
+      "first_appearance": "The Incredible Hulk #1",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://i.annihil.us/u/prod/marvel/i/mg/9/a0/59933ea5b5c2e/clean.jpg",
+      "id": 9
+    },
+    {
+      "superhero": "Captain America",
+      "characters": "Steve Rogers",
+      "alter_ego": "Steve Rogers",
+      "first_appearance": "Captain America Comics #1",
+      "publisher": "DC Comics",
+      "alt_img": "https://i.annihil.us/u/prod/marvel/i/mg/3/a0/5991fa03329b7/clean.jpg",
+      "id": 10
+    },
+    {
+      "superhero": "The Vision",
+      "characters": "Paul Bettany",
+      "alter_ego": "Paul Bettany",
+      "first_appearance": "Avengers #57",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://i.annihil.us/u/prod/marvel/i/mg/c/30/4e96fe30c0e1c/clean.jpg",
+      "id": 11
+    },
+    {
+      "superhero": "The Scarlet Witch",
+      "alter_ego": "Wanda Maximoff",
+      "first_appearance": "X-Men #4 (March 1964)",
+      "characters": "Wanda Maximoff",
+      "publisher": "Marvel Comics",
+      "alt_img": "https://i.annihil.us/u/prod/marvel/i/mg/d/60/589de3be4c9d8/clean.jpg",
+      "id": 12
+    }
+  ]
+}
