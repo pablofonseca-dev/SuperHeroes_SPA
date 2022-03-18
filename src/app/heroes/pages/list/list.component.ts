@@ -23,12 +23,4 @@ export class ListComponent implements OnInit {
       next: heroes => (this.heroes = heroes),
     });
   }
-
-  imageRenderHandler = () => {
-    this.currentRenderedImages = [...this.currentRenderedImages, true];
-
-    if (!(this.currentRenderedImages.length === this.heroes.length)) {
-      this.allImagesRendered = true;
-    }
-  };
 }

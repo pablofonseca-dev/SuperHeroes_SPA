@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { IHero } from '../../interfaces/heroes.interfaces';
 
 @Component({
@@ -10,14 +10,5 @@ export class HeroeCardComponent {
   @Input()
   hero: IHero | undefined;
 
-  @Output()
-  imageRendered: EventEmitter<boolean>;
-
-  constructor() {
-    this.imageRendered = new EventEmitter();
-  }
-
-  onImageRendered = () => {
-    this.imageRendered.emit(true);
-  };
+  constructor() {}
 }
