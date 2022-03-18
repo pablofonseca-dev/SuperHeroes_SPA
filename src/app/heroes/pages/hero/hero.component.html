@@ -1,89 +1,114 @@
-<app-spinner *ngIf="!this.hero; else heroDataVisualization"></app-spinner>
-<ng-template #heroDataVisualization>
-  <div class="container">
-    <div class="container__item" *ngIf="this.canGoBack">
-      <button
-        mat-fab
-        aria-label="Go Back"
-        (click)="this.navigateBack()"
-        fxHide.md="true"
-        fxHide.xs="true">
-        <mat-icon>west</mat-icon>
-      </button>
-      <button
-        mat-raised-button
-        color="primary"
-        aria-label="Go Back"
-        class="full-width"
-        (click)="this.navigateBack()"
-        fxHide="true"
-        fxShow.md="true"
-        fxShow.xs="true">
-        Go Back!
-      </button>
-    </div>
-    <div class="container__item">
-      <div>
-        <mat-card class="container__picture">
-          <mat-card-header>
-            <mat-card-title>
-              {{ this.hero?.superhero }} - {{ this.hero?.alter_ego }}
-            </mat-card-title>
-          </mat-card-header>
-          <img mat-card-image [src]="this.hero! | heroPicture" alt="" />
-        </mat-card>
-      </div>
-    </div>
-    <div class="container__item">
-      <div class="container__card">
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>
-              <h2>Information</h2>
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <mat-list>
-              <div mat-subheader>Characters</div>
-              <mat-list-item>
-                {{ this.hero?.characters }}
-              </mat-list-item>
-            </mat-list>
-            <mat-divider></mat-divider>
-            <mat-list>
-              <div mat-subheader>Publisher Name</div>
-              <mat-list-item>
-                {{ this.hero?.publisher }}
-              </mat-list-item>
-            </mat-list>
-            <mat-divider></mat-divider>
-            <mat-list>
-              <div mat-subheader>First Appearance</div>
-              <mat-list-item>
-                {{ this.hero?.first_appearance }}
-              </mat-list-item>
-            </mat-list>
-            <mat-divider></mat-divider>
-            <mat-list>
-              <div mat-subheader>Alter Ego</div>
-              <mat-list-item>
-                {{ this.hero?.alter_ego }}
-              </mat-list-item>
-            </mat-list>
-            <mat-divider></mat-divider>
-            <mat-list>
-              <div mat-subheader>ID</div>
-              <mat-list-item>
-                <mat-chip-list>
-                  <mat-chip>
-                    {{ this.hero?.id }}
-                  </mat-chip>
-                </mat-chip-list>
-              </mat-list-item>
-            </mat-list>
-          </mat-card-content>
-        </mat-card>
-      </div>
+<div
+  class="container"
+  fxLayout="row wrap"
+  fxLayout.md="column-reverse wrap"
+  fxLayout.sm="column-reverse wrap"
+  fxLayout.xs="column wrap"
+  fxLayoutAlign="space-evenly center"
+  fxLayoutAlign.md="center"
+  fxLayoutAlign.sm="center"
+  fxLayoutAlign.xs="center"
+  fxLayoutGap.md="20"
+  fxLayoutGap.sm="20"
+  fxLayoutGap.xs="20">
+  <div
+    class="container__item"
+    fxFlex="10"
+    fxFlex.md="100"
+    fxFlex.sm="100"
+    fxFlex.xs="100"
+    *ngIf="this.canGoBack">
+    <button
+      mat-fab
+      aria-label="Go Back"
+      (click)="this.navigateBack()"
+      fxHide.md="true"
+      fxHide.xs="true">
+      <mat-icon>west</mat-icon>
+    </button>
+    <button
+      mat-raised-button
+      color="primary"
+      aria-label="Go Back"
+      class="full-width"
+      (click)="this.navigateBack()"
+      fxHide="true"
+      fxShow.md="true"
+      fxShow.xs="true">
+      Go Back!
+    </button>
+  </div>
+  <div
+    class="container__item"
+    fxFlex="50"
+    fxFlex.md="100"
+    fxFlex.sm="100"
+    fxFlex.xs="100">
+    <div class="container__card" fxFlex="100">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h2>Information</h2>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-list>
+            <div mat-subheader>Characters</div>
+            <mat-list-item>
+              {{ this.hero?.characters }}
+            </mat-list-item>
+          </mat-list>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <div mat-subheader>Publisher Name</div>
+            <mat-list-item>
+              {{ this.hero?.publisher }}
+            </mat-list-item>
+          </mat-list>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <div mat-subheader>First Appearance</div>
+            <mat-list-item>
+              {{ this.hero?.first_appearance }}
+            </mat-list-item>
+          </mat-list>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <div mat-subheader>Alter Ego</div>
+            <mat-list-item>
+              {{ this.hero?.alter_ego }}
+            </mat-list-item>
+          </mat-list>
+          <mat-divider></mat-divider>
+          <mat-list>
+            <div mat-subheader>ID</div>
+            <mat-list-item>
+              <mat-chip-list>
+                <mat-chip>
+                  {{ this.hero?.id }}
+                </mat-chip>
+              </mat-chip-list>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
     </div>
   </div>
-</ng-template>
+  <div
+    class="container__item"
+    fxFlex="20"
+    fxFlex.md="100"
+    fxFlex.sm="100"
+    fxFlex.xs="100">
+    <div>
+      <mat-card class="container__picture">
+        <mat-card-header>
+          <mat-card-title>
+            {{ this.hero?.superhero }} - {{ this.hero?.alter_ego }}
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image [src]="this.hero! | heroPicture" alt="" />
+      </mat-card>
+    </div>
+  </div>
+</div>
