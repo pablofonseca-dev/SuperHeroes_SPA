@@ -84,6 +84,18 @@ export class AddComponent implements OnInit {
   };
 
   /**
+   * Deletes a superhero using the superheroes service passing as parameter the
+   * hero defined as a global variable.
+   */
+  deleteSuperHero = () => {
+    this._heroesService.deleteSuperhero(this.hero).subscribe({
+      next: _ => {
+        this._router.navigate(['/heroes/list/']);
+      },
+    });
+  };
+
+  /**
    * Updates a superhero using the superheroes service passing as parameter the
    * hero defined as a global variable.
    */
