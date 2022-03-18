@@ -70,7 +70,7 @@ export class HeroesService {
   };
 
   /**
-   * Fire a Post Request to update a Superhero.
+   * Fire a Put Request to update a Superhero.
    * @param newHeroData All the information related to the Superhero that is going to be updated.
    * @returns Observable with a IHero object containing the information of the
    * hero that was updated.
@@ -80,5 +80,15 @@ export class HeroesService {
       this.formatApiRoute(`heroes`, newHeroData.id),
       newHeroData
     );
+  };
+
+  /**
+   * Fire a Delete Request to delete a Superhero.
+   * @param newHero All the information related to the Superhero that is going to be deleted.
+   * @returns Observable with a IHero object containing the information of the
+   * hero that was deleted.
+   */
+  deleteSuperhero = (hero: any): Observable<IHero> => {
+    return this.http.delete<any>(this.formatApiRoute(`heroes`, hero.id));
   };
 }
