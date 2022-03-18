@@ -1,8 +1,17 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import {
+  heroCreatedMessage,
+  heroDeleteConfirmationMessage,
+  heroDeletedMessage,
+  heroUpdatedMessage,
+} from 'src/app/shared/global';
+import { ConfirmationDialogComponent } from '../../components/confirmation-dialog/confirmation-dialog.component';
 import { IHero } from '../../interfaces/heroes.interfaces';
-import { HeroPicturePipe } from '../../pipes/heroPicture/hero-picture.pipe';
 import { HeroesService } from '../../services/heroes.service';
 
 @Component({
@@ -17,14 +26,15 @@ export class AddComponent implements OnInit {
   // Hero object used to display its properties in the UI, and edit or update its values.
   hero: IHero;
 
-  // Hero picture URL, is handled using the Hero Picture Pipe.
-  displayImageURL: string;
+  // Delete superhero flag, by default is false, so red flag.
+  deleteGreenFlag: boolean;
 
   constructor(
-    private _heroPipe: HeroPicturePipe,
     private _heroesService: HeroesService,
     private _activatedRoute: ActivatedRoute,
-    private _router: Router
+    private _router: Router,
+    private _snackBar: MatSnackBar,
+    private _dialog: MatDialog
   ) {
     this.publishers = [];
 
@@ -37,31 +47,14 @@ export class AddComponent implements OnInit {
       alt_img: '',
     };
 
-    this.displayImageURL = '';
+    this.deleteGreenFlag = false;
   }
 
   ngOnInit(): void {
-    this.displayImageURL = this._heroPipe.transform(this.hero);
-
     this.publishers = ['DC Comics', 'Marvel Comics'];
 
     this.tryLoadHeroFromRoute();
   }
-
-  /**
-   * Loads the image in the form using the custom Hero Picture Pipe.
-   * This method can be called to refresh the image value in the form.
-   */
-  @ViewChild('imageSource') imageSrc!: ElementRef<HTMLInputElement>;
-  loadImage = () => {
-    let imageSource = this.imageSrc.nativeElement.value;
-
-    if (!imageSource) {
-      imageSource = this.hero.alt_img!;
-    }
-    this.hero.alt_img = imageSource;
-    this.displayImageURL = this._heroPipe.transform(this.hero);
-  };
 
   /**
    * Responsible of adding or updating a superhero depending of the scenario.
@@ -78,7 +71,8 @@ export class AddComponent implements OnInit {
     this._heroesService.createSuperhero(this.hero).subscribe({
       next: (heroAdded: IHero) => {
         this.hero = heroAdded;
-        this._router.navigate(['/heroes/edit/', this.hero.id]);
+        this.displaySnackMessage(heroCreatedMessage, 'Close', 2500);
+        this.resetFormFields();
       },
     });
   };
@@ -88,11 +82,19 @@ export class AddComponent implements OnInit {
    * hero defined as a global variable.
    */
   deleteSuperHero = () => {
-    this._heroesService.deleteSuperhero(this.hero).subscribe({
-      next: _ => {
-        this._router.navigate(['/heroes/list/']);
-      },
-    });
+    this.displayDeleteConfirmationDialog(heroDeleteConfirmationMessage)
+      .pipe(
+        switchMap((result: boolean) => {
+          if (result) return this._heroesService.deleteSuperhero(this.hero);
+          else return new Observable();
+        })
+      )
+      .subscribe({
+        next: _ => {
+          this._router.navigate(['/heroes/list/']);
+          this.displaySnackMessage(heroDeletedMessage, 'Close', 2500);
+        },
+      });
   };
 
   /**
@@ -103,6 +105,7 @@ export class AddComponent implements OnInit {
     this._heroesService.updateSuperhero(this.hero).subscribe({
       next: (heroUpdated: IHero) => {
         this.hero = heroUpdated;
+        this.displaySnackMessage(heroUpdatedMessage, 'Close', 2500);
       },
     });
   };
@@ -125,8 +128,33 @@ export class AddComponent implements OnInit {
       .subscribe({
         next: (hero: IHero) => {
           this.hero = hero;
-          this.loadImage();
         },
       });
+  };
+
+  displaySnackMessage = (
+    message: string,
+    action: string,
+    duration: number = -1
+  ): void => {
+    const toast = this._snackBar;
+
+    duration !== -1
+      ? toast.open(message, action, {
+          duration,
+        })
+      : toast.open(message, action);
+  };
+
+  displayDeleteConfirmationDialog = (message: string): Observable<boolean> => {
+    const dialogRef = this._dialog.open(ConfirmationDialogComponent, {
+      data: { message, acceptanceMessage: 'Yes', negationMessage: 'Cancel' },
+    });
+
+    return dialogRef.afterClosed();
+  };
+
+  resetFormFields = () => {
+    this.hero = {};
   };
 }
